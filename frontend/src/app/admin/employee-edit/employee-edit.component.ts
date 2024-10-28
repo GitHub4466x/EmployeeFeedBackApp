@@ -41,6 +41,7 @@ export class EmployeeEditComponent {
   
   
     onSubmit(): void {
+      this.registrationForm.markAllAsTouched();
       if (this.registrationForm.valid) {
         console.log(this.registrationForm.value);
         this.employeeService.updateEmployee(this.registrationForm.value,this.id).subscribe( (res) =>{

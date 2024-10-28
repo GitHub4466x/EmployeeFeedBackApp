@@ -28,6 +28,7 @@ export class EmployeeregistrationComponent {
 
 
   onSubmit(): void {
+    this.registrationForm.markAllAsTouched();
     if (this.registrationForm.valid) {
       console.log(this.registrationForm.value);
       this.employeeService.addEmployee(this.registrationForm.value).subscribe( (res) =>{

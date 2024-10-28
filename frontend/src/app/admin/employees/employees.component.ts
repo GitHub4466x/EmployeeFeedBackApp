@@ -24,7 +24,7 @@ export class EmployeesComponent {
   remove(id : any){
   this.employeeSevice.removeEmployee(id).subscribe( res =>{
     if(res){
-      this.toastr.success("Employee removed", "Sucess");
+      this.toastr.success("Employee removed", "Success");
       this.ngOnInit();
     }
   })

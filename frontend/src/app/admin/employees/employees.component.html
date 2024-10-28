@@ -1,5 +1,6 @@
 
-
+@if(employees.length > 0 ){
+  
 <table class="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400 border-gray-600 shadow-2xl">
     <thead class="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
@@ -48,4 +49,19 @@
       </tr>
     </tbody>
   </table>
+}@else{
+  <!-- Parent container to center align -->
+<div class="flex justify-evenly ">
+  <div class="flex flex-col max-w-full items-center justify-center p-6 border rounded-lg bg-gray-50 text-center space-y-4 shadow-2xl">
+    <i class="fa fa-user-plus text-3xl text-black"></i>
+    <p class="text-gray-600 font-semibold">No employees found</p>
+    <p class="text-gray-500 text-sm">Click below to add your first employee to the system!</p>
+    
+    <button [routerLink]="['../employeeregistration']" class="px-4 py-2 text-white bg-gray-700 rounded-md hover:bg-black focus:outline-none focus:ring focus:ring-blue-300">
+      Add Employee
+    </button>
+  </div>
+</div>
+
+}
   

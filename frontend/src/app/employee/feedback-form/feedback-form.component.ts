@@ -45,6 +45,7 @@ export class FeedbackFormComponent {
   }
 
   onSubmit(): void {
+    this.feedbackForm.markAllAsTouched()
     if (this.feedbackForm.valid) {
       console.log('Submitted feedback:', this.feedbackForm.value);
        this.feedbackService.addFeedback(this.feedbackForm.value).subscribe(res =>{
