@@ -1,0 +1,29 @@
+
+
+<div class="relative overflow-x-auto h-lvh px-12 py-8" >
+    <div class="w-full bg-gray-200 rounded m-1 px-1 max-w-4xl mx-auto mb-3">
+       
+        <div class="grid w-full  border-b border-gray-200 " >
+          <button
+            (click)="selectTab('employees')"
+            class="py-2 px-4 text-center text-lg  bg-white font-semibold rounded m-2"
+          >
+            Employees
+          </button>
+          <!-- <button
+            (click)="selectTab('reviews')"
+            [ngClass]="selectedTab === 'reviews' ? 'bg-white text-sm' : 'text-gray-600'"
+            class="py-2 px-4 text-center text-xs bg-gray-200 rounded m-2"
+          >
+            Performance Reviews
+          </button> -->
+        </div>
+      </div>
+      <div>
+        <app-employees ></app-employees>
+        <!-- <app-employeesreviews *ngIf="selectedTab === 'reviews'"></app-employeesreviews> -->
+      </div>
+     
+</div>
+
+<!-- <app-feedbackview></app-feedbackview> -->

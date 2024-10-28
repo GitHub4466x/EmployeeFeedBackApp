@@ -1,0 +1,11 @@
+<div class=" flex  justify-between overflow-x-auto  shadow-lg   px-12 py-6">
+    <div [routerLink]="['employeehome']">
+        <div class="text-lg font-bold ">Employee Dashboard</div>
+        <div class="text-xs text-gray-400 "> Make reviews of your collegues</div>
+    </div>
+    <div class="flex justify-end">
+        <button class="bg-black text-white rounded text-center text-sm  my-1 px-4" (click)="logout()"> <i
+                class="pi pi-sign-out"></i> Log Out </button>
+    </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,58 @@
+
+<div class=" py-8">
+<div class="card w-full max-w-2xl shadow-2xl mx-auto">
+    <div class="card-header">
+      <h3 class="card-title">   <i class="fa fa-circle-arrow-left text-xl mr-2 hover:text-gray-700" [routerLink]="['/employee']" ></i> Performance Review Feedback</h3>
+      <p class="card-description">
+        Provide feedback for <b class="text-black">{{  name | titlecase}}</b>
+      </p>
+    </div>
+  
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <div class="card-content space-y-6">
+        <!-- Productivity Rating Section -->
+        <div class="space-y-2">
+          <label class="font-bold">Performance</label>
+          <div class="flex space-x-4">
+            <div *ngFor="let option of ratingOptions" class="flex items-center space-x-2">
+              <input
+                type="radio"
+                formControlName="performance"
+                [value]="option.label"
+                class="radio-group-item"
+              />
+              <label >{{ option.label }}</label>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Textareas -->
+       
+  
+        <div class="space-y-2">
+          <label for="areasForImprovement" class="font-bold">Areas for Improvement</label>
+          <textarea
+            id="areasForImprovement"
+            formControlName="areasForImprovement"
+            placeholder="What areas could the employee improve in?"
+            class="textarea"
+          ></textarea>
+        </div>
+  
+        <div class="space-y-2">
+          <label for="additionalComments" class="font-bold">Additional Comments</label>
+          <textarea
+            id="additionalComments"
+            formControlName="additionalComments"
+            placeholder="Any additional comments or feedback?"
+            class="textarea"
+          ></textarea>
+        </div>
+      </div>
+  
+      <div class="card-footer px-4">
+        <button type="submit" class="btn w-full bg-gray-800 ">Submit Feedback</button>
+      </div>
+    </form>
+  </div>
+</div>

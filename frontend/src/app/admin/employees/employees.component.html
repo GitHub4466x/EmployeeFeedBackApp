@@ -1,0 +1,51 @@
+
+
+<table class="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400 border-gray-600 shadow-2xl">
+    <thead class="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-lg">
+          #
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Reviewer
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Gender
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Job Role
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let employee of employees ; let i=index;">
+        <td class="px-6 py-4">
+          {{ i+1}}
+        </td>
+        <td class="px-6 py-4">
+          {{ employee.name |titlecase}}
+        </td>
+        <td class="px-6 py-4">
+          {{ employee.gender  | titlecase}}
+        </td>
+        <td class="px-6 py-4">
+          {{ employee.jobRole | titlecase}}
+        </td>
+        <td class="px-6 py-4 flex justify-evenly">
+          <button class=" rounded text-blue-700 p-1 text-xs cursor-pointer hover:bg-blue-700 hover:text-white " [routerLink]="['../feedbackview',employee._id]">
+            <i class="pi pi-eye"></i>
+          </button>
+          <button class="text-black rounded p-1 text-xs hover:bg-black  hover:text-white" [routerLink]="['../edit',employee._id] ">
+            <i class="fa-solid fa-user-pen"></i>
+          </button>
+          <button class="text-orange-600 rounded p-1 text-xs hover:bg-orange-700  hover:text-white" (click)="remove(employee._id)">
+            <i class="pi pi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
